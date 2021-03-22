@@ -1,0 +1,21 @@
+header{
+    height: 175px;
+}
+main{
+    width: 100%;
+    overflow: hidden;
+}
+div{
+    float: left;
+    height: 500px;
+    width: 45%;
+}
+div img{
+    width:70%; 
+    height:70%;
+    display:block;
+    margin: auto;
+}
+footer{
+    clear: both;
+}
