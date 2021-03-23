@@ -13,16 +13,33 @@
       <select>
         <option value="default">Filter by Keyword</option>
       </select>
+      <div class="top">
+        <button id="firstPage">Page One</button>
+        <button id="secondPage">Page Two</button>
+    </div>
+    <div class="buttom">
+        <button id="byHorns">Sort By Horns</button>
+        <button id="byName">Sort By Name</button>
+    </div>
     </header>
     <main>
-      <div id="photo-template">
+      <template id="photo-template" type="text/x-tmpl-mustache">
+        <section class="{{keyword}} visible">
+            <h2>{{title}}</h2>
+            <img src="{{image_url}}" alt="">
+            <p>{{description}}</p>
+        </section>
+      </template>
+
+      <!-- <div id="photo-template">
         <h2></h2>
         <img src="" alt="">
         <p></p>
-      </div>
+      </div> -->
     </main>
     <footer>
       &copy; 2018 Code Fellows
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
       <script src="js/app.js"></script>
     </footer>
