@@ -4,18 +4,31 @@ header{
 main{
     width: 100%;
     overflow: hidden;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-div{
+/* div{
     float: left;
     height: 500px;
     width: 45%;
-}
-div img{
+} */
+/* div img{
     width:70%; 
     height:70%;
     display:block;
     margin: auto;
+} */
+section img{
+    width:70%; 
+    height:70%;
+    text-align: center;
 }
+
 footer{
     clear: both;
 }
+.top,.buttom{
+    width:50px ;
+    width: 370px;
+  }
