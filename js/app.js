@@ -117,7 +117,8 @@ $(document).ready(function () {
 
     })
 
-    $('#byHorns').on('click', () => {
+    $('#byHorns').on('click', (event) => {
+        event.preventDefault();
         $('section').remove();
         objArr.sort((a, b) => {
             return b.horns - a.horns;
@@ -127,12 +128,39 @@ $(document).ready(function () {
         });
         $('section').removeClass('visible');
         let $buttonValue = $('select option:selected').val();
+        console.log($buttonValue);
+
         if ($buttonValue === 'default') {
             $('section').addClass('visible');
         }
         $(`${$buttonValue}`).addClass('visible');
     })
-   
+
+    $('#byName').on('click',()=>{
+        $('section').remove();
+        objArr.sort((a,b) =>{
+            let firstTitle = a.title.toLowerCase();
+            let secondTitle = b.title.toLowerCase();
+            if (firstTitle > secondTitle){
+                return 1;
+            }else{
+                return -1
+            }
+            
+        });
+        objArr.forEach(value =>{
+            value.render();
+        });
+        $('section').removeClass('visible');
+        
+        let $buttonValue = $('select option:selected').val();
+        console.log($buttonValue);
+
+        if ($buttonValue === 'default'){
+            $('section').addClass('visible');
+        }
+        $(`[class*=${$buttonValue}]`).addClass('visible');
+    })
 
 
 
